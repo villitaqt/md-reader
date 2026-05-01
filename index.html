@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MD Reader</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <header id="toolbar">
+        <button id="btn-open-file">Abrir archivo</button>
+        <button id="btn-open-folder">Abrir carpeta</button>
+        <span class="toolbar-spacer"></span>
+        <button id="btn-find" title="Buscar (Ctrl+F)">&#x2315;</button>
+      </header>
+      <div id="layout">
+        <nav id="sidebar" class="hidden">
+          <ul id="tree"></ul>
+        </nav>
+        <div id="viewer">
+          <article id="content">
+            <p class="placeholder">Abre un archivo .md para comenzar.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
