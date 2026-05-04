@@ -24,12 +24,19 @@ const md: MarkdownIt = new MarkdownIt({
   .use(anchor)
   .use(footnote);
 
+let currentSource = "";
+
+export function getCurrentSource(): string {
+  return currentSource;
+}
+
 export function renderMarkdown(source: string): string {
   return DOMPurify.sanitize(md.render(source), { USE_PROFILES: { html: true } });
 }
 
 export async function loadFile(path: string): Promise<void> {
   const source = await readTextFile(path);
+  currentSource = source;
   const content = document.getElementById("content");
   const viewer = document.getElementById("viewer");
   if (!content) return;

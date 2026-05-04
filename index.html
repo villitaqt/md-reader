@@ -12,6 +12,10 @@
         <button id="btn-open-file">Abrir archivo</button>
         <button id="btn-open-folder">Abrir carpeta</button>
         <span class="toolbar-spacer"></span>
+        <div id="mode-toggle" class="hidden">
+          <button class="mode-btn mode-btn--active" data-mode="view">Vista</button>
+          <button class="mode-btn" data-mode="edit">Editar</button>
+        </div>
         <button id="btn-find" title="Buscar (Ctrl+F)">&#x2315;</button>
       </header>
       <div id="layout">
@@ -22,6 +26,7 @@
           <article id="content">
             <p class="placeholder">Abre un archivo .md para comenzar.</p>
           </article>
+          <textarea id="editor" class="hidden" spellcheck="false"></textarea>
         </div>
       </div>
     </div>

@@ -73,6 +73,40 @@ html, body {
 
 #toolbar button:hover { background: var(--bg-hover); }
 
+/* ── Mode toggle (segmented control) ─────────── */
+
+#mode-toggle {
+  display: flex;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 2px;
+  gap: 2px;
+}
+
+#mode-toggle.hidden { display: none; }
+
+.mode-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 3px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  letter-spacing: 0.01em;
+}
+
+.mode-btn--active {
+  background: var(--bg-toolbar);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.mode-btn:hover:not(.mode-btn--active) { color: var(--text); }
+
 #btn-find {
   font-size: 17px;
   padding: 2px 7px !important;
@@ -166,7 +200,6 @@ details[open] > summary::before { content: "▼ "; }
   flex: 1;
   overflow-y: auto;
   position: relative;
-  padding: 32px 24px;
   background: var(--bg);
 }
 
@@ -174,7 +207,10 @@ details[open] > summary::before { content: "▼ "; }
   max-width: 720px;
   margin: 0 auto;
   line-height: 1.7;
+  padding: 32px 24px;
 }
+
+#content.hidden { display: none; }
 
 .placeholder {
   color: var(--text-muted);
@@ -182,6 +218,30 @@ details[open] > summary::before { content: "▼ "; }
   margin-top: 20vh;
   font-size: 15px;
 }
+
+#editor {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: calc(100vh - 48px);
+  background: transparent;
+  color: var(--text);
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  padding: 32px 24px;
+  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  tab-size: 2;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  caret-color: var(--accent);
+}
+
+#editor.hidden { display: none; }
 
 /* ── Find bar ────────────────────────────────── */
 
